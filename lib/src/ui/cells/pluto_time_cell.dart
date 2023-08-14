@@ -220,14 +220,14 @@ class PlutoTimeCellState extends State<PlutoTimeCell>
       decoration: BoxDecoration(
         color: cellColor,
         shape: BoxShape.circle,
-        border: !isCurrentCell
+        border: widget.stateManager.style.enableCellActivatedBorder ? (!isCurrentCell
             ? null
             : !renderContext.stateManager.hasFocus
                 ? Border.all(
                     color: widget.stateManager.style.activatedBorderColor,
                     width: 1,
                   )
-                : null,
+                : null) : null,
       ),
       child: Padding(
         padding: const EdgeInsets.all(5),

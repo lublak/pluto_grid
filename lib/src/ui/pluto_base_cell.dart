@@ -199,6 +199,7 @@ class _CellContainerState extends PlutoStateWithChange<_CellContainer> {
             stateManager.rowGroupDelegate!.isExpandableCell(widget.cell),
         enableCellVerticalBorder: style.enableCellBorderVertical,
         borderColor: style.borderColor,
+        enableCellActivatedBorder: style.enableCellActivatedBorder,
         activatedBorderColor: style.activatedBorderColor,
         activatedColor: style.activatedColor,
         inactivatedBorderColor: style.inactivatedBorderColor,
@@ -241,6 +242,7 @@ class _CellContainerState extends PlutoStateWithChange<_CellContainer> {
     required bool isGroupedRowCell,
     required bool enableCellVerticalBorder,
     required Color borderColor,
+    required bool enableCellActivatedBorder,
     required Color activatedBorderColor,
     required Color activatedColor,
     required Color inactivatedBorderColor,
@@ -262,18 +264,18 @@ class _CellContainerState extends PlutoStateWithChange<_CellContainer> {
           cellColorInEditState: cellColorInEditState,
           selectingMode: selectingMode,
         ),
-        border: Border.all(
+        border: enableCellActivatedBorder ? Border.all(
           color: hasFocus ? activatedBorderColor : inactivatedBorderColor,
           width: 1,
-        ),
+        ) : null,
       );
     } else if (isSelectedCell) {
       return BoxDecoration(
         color: activatedColor,
-        border: Border.all(
+        border: enableCellActivatedBorder ? Border.all(
           color: hasFocus ? activatedBorderColor : inactivatedBorderColor,
           width: 1,
-        ),
+        ) : null,
       );
     } else {
       return BoxDecoration(

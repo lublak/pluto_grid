@@ -197,6 +197,7 @@ class PlutoGridStyleConfig {
     this.enableColumnBorderHorizontal = true,
     this.enableCellBorderVertical = true,
     this.enableCellBorderHorizontal = true,
+    this.enableCellActivatedBorder = true,
     this.enableRowColorAnimation = false,
     this.gridBackgroundColor = Colors.white,
     this.rowColor = Colors.white,
@@ -253,6 +254,7 @@ class PlutoGridStyleConfig {
     this.enableColumnBorderHorizontal = true,
     this.enableCellBorderVertical = true,
     this.enableCellBorderHorizontal = true,
+    this.enableCellActivatedBorder = true,
     this.enableRowColorAnimation = false,
     this.gridBackgroundColor = const Color(0xFF111111),
     this.rowColor = const Color(0xFF111111),
@@ -317,6 +319,9 @@ class PlutoGridStyleConfig {
 
   /// Enable the horizontal border of [PlutoCell].
   final bool enableCellBorderHorizontal;
+
+  /// Enable the activated border of [PlutoCell]
+  final bool enableCellActivatedBorder;
 
   /// Animation of background color transition of rows,
   /// such as when the current row or rows are dragged.
@@ -454,6 +459,7 @@ class PlutoGridStyleConfig {
     bool? enableColumnBorderHorizontal,
     bool? enableCellBorderVertical,
     bool? enableCellBorderHorizontal,
+    bool? enableCellActivatedBorder,
     bool? enableRowColorAnimation,
     Color? gridBackgroundColor,
     Color? rowColor,
@@ -502,6 +508,7 @@ class PlutoGridStyleConfig {
           enableCellBorderVertical ?? this.enableCellBorderVertical,
       enableCellBorderHorizontal:
           enableCellBorderHorizontal ?? this.enableCellBorderHorizontal,
+      enableCellActivatedBorder: enableCellActivatedBorder ?? this.enableCellActivatedBorder,
       enableRowColorAnimation:
           enableRowColorAnimation ?? this.enableRowColorAnimation,
       gridBackgroundColor: gridBackgroundColor ?? this.gridBackgroundColor,
@@ -567,6 +574,7 @@ class PlutoGridStyleConfig {
                 other.enableColumnBorderHorizontal &&
             enableCellBorderVertical == other.enableCellBorderVertical &&
             enableCellBorderHorizontal == other.enableCellBorderHorizontal &&
+            enableCellActivatedBorder == other.enableCellActivatedBorder &&
             enableRowColorAnimation == other.enableRowColorAnimation &&
             gridBackgroundColor == other.gridBackgroundColor &&
             rowColor == other.rowColor &&
@@ -612,6 +620,7 @@ class PlutoGridStyleConfig {
         enableColumnBorderHorizontal,
         enableCellBorderVertical,
         enableCellBorderHorizontal,
+        enableCellActivatedBorder,
         enableRowColorAnimation,
         gridBackgroundColor,
         rowColor,
